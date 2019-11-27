@@ -48,18 +48,16 @@ public class RegistroPago {
     }
     
     @RequestMapping(value="RegistroPago.htm", method = RequestMethod.POST)
-    public ModelAndView RegistrarPago
-        (Detalle_Prestamo dp,HttpServletRequest request)
+    public ModelAndView RegistrarPago(@RequestParam("monto_cuota") String monto,HttpServletRequest request)
        //(@RequestParam("monto_cuota") String monto)          
    {
 //        Detalle_Prestamo dp= new Detalle_Prestamo();
         LocalDate date = LocalDate.now();
+        id= Integer.parseInt(request.getParameter("id"));
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         String sql = "INSERT INTO abmpoo2.detalle_prestamo (monto_cuota,fecha_pago,idprestamo_cuota) "
                 + "VALUES (?,?,?)";        
-        this.jdbcTemplate.update(sql,0,
-//                dp.getFecha_pago());
-                  date.format(formatter),id);
+        this.jdbcTemplate.update(sql,monto,date.format(formatter),id);
 //         String sql = "INSERT INTO abmpoo2.detalle_prestamo "
 //                 + "(monto_cuota,fecha_pago,idprestamo_cuota) "
 //                 + "VALUES(?,?,?)";

@@ -25,7 +25,7 @@ public class ListaPrestamos {
     @RequestMapping("Inicio.htm")
     public ModelAndView Listar()
     {
-        String sql = "SELECT * FROM abmpoo2.vs_lista_prestamos";
+        String sql = "SELECT * FROM abmpoo2.VS_lista_prestamos_dos";
         List datos = this.jdbcTemplate.queryForList(sql);
         
         mav.addObject("lista",datos);
