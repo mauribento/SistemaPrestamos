@@ -22,6 +22,8 @@
                 <prop key="Inicio.htm">ListaPrestamos</prop>
                 <prop key="RegistrarPrestamo.htm">RegistrarPrestamo</prop>
                 <prop key="RegistroPago.htm">RegistroPago</prop>
+                <prop key="BorrarPrestamo.htm">BorrarPrestamo</prop>
+                <prop key="Cuotas.htm">ListaCuotas</prop>
             </props>
         </property>
     </bean>
@@ -42,6 +44,13 @@
           />
     <bean name="RegistrarPrestamo"
           class="controller.RegistrarPrestamo"
+          />
+    
+    <bean name="BorrarPrestamo"
+          class="controller.BorrarPrestamo"
+          />
+     <bean name="ListaCuotas"
+          class="controller.ListaCuotas"
           />
     
     <bean name="indexController"

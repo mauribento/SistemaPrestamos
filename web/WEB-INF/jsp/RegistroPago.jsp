@@ -20,35 +20,75 @@
       </div>
         <div class="container mr-4">
             <div class="row">
-                <div class="col-sm-4">
+                <div class="col-sm-12">
+                <div class="panel panel-default ">
+                  <div class="panel-heading">Detalle del prestamo</div>
+                  <div class="panel-body">
+                      <div class="row">
+                  <div class="col-sm-3">
                     <div class="form-group">
-                       <label for="exampleInputEmail1">Monto Prestamo</label>
+                       <label>Monto Prestamo</label>
                        <input type="text" class="form-control" value="${lista[0].importe_prestamo}" disabled="true">   
                     </div></div>
-                       <div class="col-sm-4">
+                       <div class="col-sm-3">
                          <div class="form-group">
-                       <label for="exampleInputEmail1">Numero de Cuotas</label>
+                       <label>Numero de Cuotas</label>
                        <input type="text" class="form-control" value="${lista[0].cantidad_cuotas}"disabled="true">   
                        </div>
                        </div>
-                       <div class="col-sm-4">
+                       <div class="col-sm-3">
                          <div class="form-group">
-                       <label for="exampleInputEmail1">Interes</label>
+                       <label>Interes</label>
                        <input type="text" class="form-control"  value="${lista[0].porcentaje_int}"disabled="true">   
                        </div>   
                        </div>
-                       <div class="col-sm-4">
+                       <div class="col-sm-3">
                          <div class="form-group">
-                       <label for="exampleInputEmail1">Fecha Primer Vencimiento</label>
+                       <label>Fecha Primer Vencimiento</label>
                        <input type="text" class="form-control"  value="${lista[0].fecha_primer_vencimiento}"disabled="true">   
                        </div>
-                       </div>
-                       <div class="col-sm-4">
-                         <div class="form-group">
-                       <label for="exampleInputEmail1">Tipo Prestamo</label>                       
-                       </div>
-                </div>                
-            
+                       </div>                       
+                      </div>
+                  </div>
+                </div>
+                </div>
+                       <div class="col-md-12">
+                           <div class="panel panel-default">
+                              <div class="panel-heading">Pago A realizar</div>
+                              <div class="panel-body">
+                                          
+                              <div clas="row">
+                                  <form method="POST">
+                                 <div class="col-sm-4">
+                                   <div class="form-group">
+                                   <label>Numero de Cuota a pagar</label>
+                                   <input type="text" class="form-control" name="nro_cuota_pagar" value="${lista[0].nro_cuota_pagar}" required="required">   
+                                   </div>
+                                 </div>
+                                   
+                                  <div class="col-sm-4">
+                                   <div class="form-group">
+                                   <label>Monto a pagar</label>
+                                   <input type="text" class="form-control" name="monto_cuota"  value="${lista[0].monto_cuota}" required="required">   
+                                   </div>
+                                 </div>
+                                   <div class="col-sm-4">
+                                   <div class="form-group">
+                                   <label>Fecha de pago</label>
+                                   <input type="text" class="form-control" name="fecha_pago" value="${fecha_pago}">   
+                                   </div>
+                                 </div>
+                                          
+                                  <div class="col-sm-4">
+                                      <a href="Inicio.htm" class="btn btn-sm btn-outline-secondary">Cancelar</a>
+                                      <input type="submit" class="btn btn-sm btn-outline-secondary" value="Registrar">
+                                  </div>
+                                       </form>
+                              </div>      
+                           
+                          </div>
+                        </div>
+                           
         </div>
     </body>
 </html>

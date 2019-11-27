@@ -23,7 +23,7 @@ public class RegistrarPrestamo {
     
     @RequestMapping(value="RegistrarPrestamo.htm", method = RequestMethod.GET)
     public ModelAndView RegistrarPrestamo()
-    {
+    {        
         mav.addObject(new Prestamo());
         mav.setViewName("registrar");        
         return mav;
