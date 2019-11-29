@@ -23,14 +23,19 @@ public class ListaCuotas {
     JdbcTemplate jdbcTemplate = new JdbcTemplate(con.Conectar());
     ModelAndView mav = new ModelAndView();
     int id;
-    @RequestMapping(value="Cuotas.htm", method = RequestMethod.GET)
-    public ModelAndView ListaCuotas(HttpServletRequest request)
+    @RequestMapping//("Cuotas.htm")
+        (value="Cuotas.htm", method = RequestMethod.GET)
+    public ModelAndView ListaCuotas
+       (HttpServletRequest request)
     {
         id= Integer.parseInt(request.getParameter("id"));
-        String sql = "SELECT * FROM abmpoo2.prestamo_cuota where id_prestamo = "+id;
+        String sql = "SELECT idprestamo_cuota,prestamo_nro_cuota,prestamo_monto_cuota"
+                + ",prestamo_fecha_pago,id_prestamo,prestamo_monto_interes"
+                + ",prestamo_capital_pagado,prestamo_cuota_Amortizada,pagado_detalle FROM vs_prestamos_detalle_cuota where id_prestamo ="+id;
+        //where id_prestamo =
         List datos = this.jdbcTemplate.queryForList(sql);        
         mav.addObject("lista",datos);
         mav.setViewName("Cuotas");        
-        return mav;
+        return mav; 
     }
 }

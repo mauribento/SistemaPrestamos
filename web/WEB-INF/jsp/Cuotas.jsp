@@ -3,7 +3,7 @@
     Created on : 27-nov-2019, 15:45:50
     Author     : bentom
 --%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -33,9 +33,10 @@
                                 <th>Importe</th>
                                 <th>Interes</th>
                                 <th>Fecha de Pago Prevista</th>
+                               
                                 <th>Capital</th>                                
                                 <th>Cuota Amortizada</th>
-                                
+                                <th>Pagado</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -45,11 +46,11 @@
                                 <td>${dato.prestamo_monto_cuota}</td>
                                 <td>${dato.prestamo_monto_interes}</td>
                                 <td>${dato.prestamo_fecha_pago}</td>
+                                
                                 <td>${dato.prestamo_capital_pagado}</td>                                
                                 <td>${dato.prestamo_cuota_Amortizada}</td>
-                                <td>
-                                  
-                                </td>
+                                <td>${dato.pagado_detalle}</td>
+                                
                             </tr>
                             </c:forEach>
                         </tbody>

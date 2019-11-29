@@ -52,7 +52,7 @@
                                 
                                 <td>${dato.desc_tipo_prestamo}</td>
                                 <td>
-                                    <a class="btn btn-sm btn-outline-secondary" href="RegistroPago.htm?id=${dato.id_prestamo}" >Pagar</a>
+                                    <a class="btn btn-sm btn-outline-secondary" href="RegistroPago.htm?id=${dato.id_prestamo}&id2=${dato.idprestamo_cuota}" >Pagar</a>
                                     <a class="btn btn-sm btn-outline-secondary" href="Cuotas.htm?id=${dato.id_prestamo}" >Cuotas</a>
                                     <a class="btn btn-sm btn-outline-secondary" href="BorrarPrestamo.htm?id=${dato.id_prestamo}">Eliminar</a>
                                 </td>
